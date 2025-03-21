@@ -1,7 +1,15 @@
 import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  trailingSlash: false, // Ensure URLs are handled correctly
+  async rewrites() {
+    return [
+      {
+        source: "/(.*)", 
+        destination: "/", 
+      },
+    ];
+  },
 };
 
 export default nextConfig;
